@@ -1,0 +1,238 @@
+:root {
+    --primaryColor: #930909;
+    --secondaryColor: #d73838;
+    --tertiaryColor: green;
+    --primaryFont: Montserrat;
+    --secondaryFont: Roboto;
+    --tertiaryFont: Arial;
+}
+
+body {
+    font-family: var(--primaryFont);
+}
+
+nav {
+    font-weight: 700;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.primaryColor {
+    color: var(--primaryColor);
+}
+
+.backgroundColorSecondary {
+    background-color: var(--secondaryColor);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.column {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    text-underline-mode: none;
+    font-weight: 700;
+    transition: all .1s ease-in-out;
+    display: none;
+}
+
+a:hover {
+    color: var(--primaryColor);
+    transition: all .1s ease-in-out;
+    transform: scale(1.1);
+    display: none;
+}
+
+a.stayWhite {
+    color: white;
+    transition: all .1s ease-in-out;
+}
+
+a.stayWhite:hover {
+    color: white;
+    transition: all .1s ease-in-out;
+    transform: scale(1.1);
+}
+
+section {
+    padding: 25px;
+}
+
+div {
+    padding: 20px;
+}
+
+blockquote {
+    color: white;
+    font-weight: 700;
+    background-color: var(--secondaryColor);
+    padding: 20px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+button {
+    background-color: var(--primaryColor);
+    color: white;
+    font-family: var(--primaryFont);
+    font-size: 18px;
+    font-weight: 700;
+    border: 25px;
+    border-radius: 100px;
+    padding: 15px 26px 15px 26px;
+    transition: all .1s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--secondaryColor);
+    box-shadow: #737373 0px 0px 5px;
+    transition: all .1s ease-in-out;
+    transform: scale(1.05);
+}
+
+.buttonSecondary {
+    background-color: var(--secondaryColor);
+    color: white;
+    font-family: var(--primaryFont);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 26px 15px 26px;
+    border: 25px;
+    border-radius: 100px;
+    transition: all .1s ease-in-out;
+}
+
+.buttonSecondary:hover {
+    background-color: var(--tertiaryColor);
+    box-shadow: #737373 0px 0px 5px;
+    transition: all .1s ease-in-out;
+    transform: scale(1.05);
+}
+
+.buttonTertiary {
+    background-color: var(--tertiaryColor);
+    color: white;
+    font-family: var(--primaryFont);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 26px 15px 26px;
+    border: 25px;
+    border-radius: 100px;
+    transition: all .1s ease-in-out;
+}
+
+.buttonTertiary:hover {
+    background-color: var(--primaryColor);
+    box-shadow: #737373 0px 0px 5px;
+    transition: all .1s ease-in-out;
+    transform: scale(1.05);
+}
+
+.card {
+    background-color: var(--primaryColor);
+    border-radius: 10px;
+    box-shadow: #646464 0px 0px 5px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.testimonialImage {
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+
+}
+
+.testimonialText {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.testimonialUser {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.testimonialUserTitle {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+footer {
+    background-color: var(--tertiaryColor);
+    color: white;
+    font-family: var(--primaryFont);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px;
+    border: 15px;
+}
+
+img.socialIcon {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 100px;
+}
+
+img.socialIcon:hover {
+    transform: scale(1.1);
+    transition: all .1s ease-in-out;
+    box-shadow: #fff 0px 0px 5px;
+}
+
+.center {
+    text-align: center;
+}
+
+

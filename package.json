@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@google-cloud/storage": "^6.7.0",
+    "bannerbear": "^1.4.0",
+    "firebase": "^9.13.0",
+    "firebaseui": "^6.0.1",
+    "fuse.js": "^6.6.2"
+  },
+  "devDependencies": {
+    "firebase-tools": "^11.16.0"
+  }
+}

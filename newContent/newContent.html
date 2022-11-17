@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Content</title>
+
+	<!-- Style for 'newContent' -->
+	<style>
+		.column {
+			float: left;
+			width: 33.33%;
+			padding: 10px;
+			box-shadow: 7px 10px 39px -12px rgba(0,0,0,0.64);
+			-webkit-box-shadow: 7px 10px 39px -12px rgba(0,0,0,0.64);
+			-moz-box-shadow: 7px 10px 39px -12px rgba(0,0,0,0.64);
+		}
+
+		#facebookPreview {
+
+		}
+
+		#instagramPreview {
+
+		}
+
+		#linkedinPreview {
+
+		}
+
+		#twitterPreview {
+
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+			display: table;
+			clear: both;
+		}
+	</style>
+
+</head>
+<body>
+
+<!-- Selection Support for Tabs" -->
+<script>
+	function newContentType(cityName) {
+		var i;
+		var x = document.getElementsByClassName("city");
+		for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+		}
+		document.getElementById(cityName).style.display = "block";
+	}
+</script>
+
+<div class="tabs">
+	<button class="tab" onclick="selectContentType('Event')">Event</button>
+	<button class="tab" onclick="selectContentType('Listing')">Listing</button>
+	<button class="tab" onclick="selectContentType('Testimonial')">Testimonial</button>
+	<button class="tab" onclick="selectContentType('Just Sold')">Just Sold</button>
+	<button class="tab" onclick="selectContentType('Market Update')">Market Update</button>
+</div>
+
+
+
+<!-- Event -->
+<div id="Event" class="w3-container w3-display-container city">
+	<span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright"></span>
+	<h2>New Event</h2>
+	<form>
+
+		<!-- Event Title -->
+		<div>
+			<label for="title">Title</label>
+			<input type="text" id="title" name="title" placeholder="Title.." onchange="
+        eventTitle = document.getElementById('title').value;
+        document.getElementById('eventTitleFacebook').innerHTML = eventTitle;
+        document.getElementById('eventTitleInstagram').innerHTML = eventTitle;
+        document.getElementById('eventTitleLinkedin').innerHTML = eventTitle;
+        document.getElementById('eventTitleTwitter').innerHTML = eventTitle;
+       ">
+		</div>
+
+		<!-- Event Date -->
+		<div>
+			<label for="description">Description</label>
+			<input type="text" id="description" name="description" placeholder="Description.." onchange="
+        eventDesc = document.getElementById('description').value;
+        document.getElementById('eventDescFacebook').innerHTML = eventDesc;
+        document.getElementById('eventDescInstagram').innerHTML = eventDesc;
+        document.getElementById('eventDescLinkedin').innerHTML = eventDesc;
+        document.getElementById('eventDescTwitter').innerHTML = eventDesc;
+      ">
+		</div>
+
+		<!-- Event Date -->
+		<div>
+			<label for="date">Date</label>
+			<input type="date" id="date" name="date" placeholder="Date.." onchange="
+        eventDate = document.getElementById('date').value;
+        document.getElementById('eventDateFacebook').innerHTML = eventDate;
+        document.getElementById('eventDateInstagram').innerHTML = eventDate;
+        document.getElementById('eventDateLinkedin').innerHTML = eventDate;
+        document.getElementById('eventDateTwitter').innerHTML = eventDate;
+      ">
+		</div>
+
+		<!-- Event Time -->
+		<div>
+			<label for="time">Time</label>
+			<input type="time" id="time" name="time" placeholder="Time.." onchange="
+        eventTime = document.getElementById('time').value;
+        document.getElementById('eventTimeFacebook').innerHTML = eventTime;
+        document.getElementById('eventTimeInstagram').innerHTML = eventTime;
+        document.getElementById('eventTimeLinkedin').innerHTML = eventTime;
+        document.getElementById('eventTimeTwitter').innerHTML = eventTime;
+      ">
+		</div>
+
+		<!-- Event Location -->
+		<div>
+			<label for="location">Location</label>
+			<input type="text" id="location" name="location" placeholder="Location.." onchange="
+        eventLocation = document.getElementById('location').value;
+        document.getElementById('eventLocationFacebook').innerHTML = eventLocation;
+        document.getElementById('eventLocationInstagram').innerHTML = eventLocation;
+        document.getElementById('eventLocationLinkedin').innerHTML = eventLocation;
+        document.getElementById('eventLocationTwitter').innerHTML = eventLocation;
+      ">
+		</div>
+
+		<!-- Event Image -->
+		<div>
+			<label for="uploadImage">Image</label>
+			<input type="file" id="uploadImage" name="image" onchange="
+        const file = document.querySelector('#uploadImage').files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+          localStorage.setItem('image', reader.result);
+          document.getElementById('eventImageFacebook').setAttribute('src', localStorage.getItem('image'));
+          document.getElementById('eventImageTwitter').setAttribute('src', localStorage.getItem('image'));
+          document.getElementById('eventImageLinkedin').setAttribute('src', localStorage.getItem('image'));
+          document.getElementById('eventImageInstagram').setAttribute('src', localStorage.getItem('image'));
+        };
+
+        if (localStorage.getItem('image'))
+          document.getElementById('eventImageFacebook').setAttribute('src', localStorage.getItem('image'));
+          document.getElementById('eventImageTwitter').setAttribute('src', localStorage.getItem('image'));
+          document.getElementById('eventImageLinkedin').setAttribute('src', localStorage.getItem('image'));
+          document.getElementById('eventImageInstagram').setAttribute('src', localStorage.getItem('image'));
+      ">
+		</div>
+
+		<!-- Event SUBMIT -->
+		<input type="submit" value="Submit">
+
+	</form>
+
+	<div class="row">
+
+		<!-- Facebook Post Preview -->
+		<div id="facebookPreview" class="column">
+			<div><b>Facebook post:</b></div>
+			<div id="eventTitleFacebook" contenteditable="true">facebookTitle</div>
+			<div id="eventDescFacebook" contenteditable="true" >facebookDesc</div>
+			<div id="eventDateFacebook" contenteditable="true">facebookDate</div>
+			<div id="eventTimeFacebook" contenteditable="true">facebookTime</div>
+			<div id="eventLocationFacebook" contenteditable="true">facebookLocation</div>
+			<img id="eventImageFacebook" contenteditable="true" alt="" src="https://via.placeholder.com/150"/>
+		</div>
+
+		<!-- Instagram Post Preview -->
+		<div id="instagramPreview" class="column">
+			<div><b>Instagram post:</b></div>
+			<div style="align-content: center; align-items: center; display: flex; flex-direction: column;">
+				<img id="eventImageInstagram" style="height: 250px; width: 200px;" contenteditable="true" alt="" src="https://via.placeholder.com/150"/>
+				<img id="bottomOfInstagramImage" style="width: 200px;" contenteditable="true" alt="" src="instagramPreviewSupport/bottomOfImage.png"/>
+			</div>
+			<div id="eventTitleInstagram" contenteditable="true">instaTitle</div>
+			<div id="eventDescInstagram" contenteditable="true">instaDesc</div>
+			<div id="eventDateInstagram" contenteditable="true">instaDate</div>
+			<div id="eventTimeInstagram" contenteditable="true">instaTime</div>
+			<div id="eventLocationInstagram" contenteditable="true">instaLocation</div>
+		</div>
+
+		<!-- Twitter Post Preview -->
+		<div id="twitterPreview" class="column">
+			<div><b>LinkedIn post:</b></div>
+			<div id="eventTitleLinkedin" contenteditable="true">linkedinTitle</div>
+			<div id="eventDescLinkedin" contenteditable="true">linkedinDesc</div>
+			<div id="eventDateLinkedin" contenteditable="true">linkedinDate</div>
+			<div id="eventTimeLinkedin" contenteditable="true">linkedinTime</div>
+			<div id="eventLocationLinkedin" contenteditable="true">linkedinLocation</div>
+			<img id="eventImageLinkedin" alt="" src="https://via.placeholder.com/150"/>
+		</div>
+
+		<!-- LinkedIn Post Preview -->
+		<div id="linkedinPreview" class="column">
+			<div><b>Twitter post:</b></div>
+			<div id="eventTitleTwitter" contenteditable="true">twitterTitle</div>
+			<div id="eventDescTwitter" contenteditable="true">twitterDesc</div>
+			<div id="eventDateTwitter" contenteditable="true">twitterDate</div>
+			<div id="eventTimeTwitter" contenteditable="true">twitterTime</div>
+			<div id="eventLocationTwitter" contenteditable="true">twitterLocation</div>
+			<img id="eventImageTwitter" alt="" src="https://via.placeholder.com/150"/>
+		</div>
+
+	</div>
+
+</div>
+
+<!-- Listing -->
+<div id="Listing" class="w3-container w3-display-container city" style="display:none">
+	<span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright"></span>
+	<h2>New Listing</h2>
+</div>
+
+<!-- Testimonial -->
+<div id="Testimonial" class="w3-container w3-display-container city" style="display:none">
+	<span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright"></span>
+	<h2>New Testimonial</h2>
+</div>
+
+<!-- Just Sold -->
+<div id="Just Sold" class="w3-container w3-display-container city" style="display:none">
+	<span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright"></span>
+	<h2>Just Sold</h2>
+</div>
+
+<!-- Market Update -->
+<div id="Market Update" class="w3-container w3-display-container city" style="display:none">
+	<span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright"></span>
+	<h2>Market Update</h2>
+</div>
+
+
+</body>
+</html>

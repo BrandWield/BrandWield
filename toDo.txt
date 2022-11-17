@@ -1,0 +1,16 @@
+Can do:
+- Save browser image uploads for image files to public 'google cloud storage' links (to save to firebase as the image variables)
+- display color code (in an actual color display) on load, and on change
+- Create templates in Bannerbear for social media banners
+- 'clear' buttons
+        - stops working from 'brand' section down
+        - does not work with images & fonts
+
+Solve:
+- Figure out how to 'write' or 'set' data to firebase upon the 'lock' button being pressed.
+- Create identical preview-posts for the 4 social media platforms in the 'newContent' page.
+- Show where variable is changed in the users brand content from the 'myBrand' page (where they edit the variables)
+- Add a 'click-to-add' function to addable myBrand variables like 'people', 'offerings', 'locations', etc.fire
+- Firebase hosting to live url
+        - Set up user accounts with firebase auth and allow account-specific functions
+- Import instagram api profile url pic to the image placeholder
